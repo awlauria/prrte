@@ -817,7 +817,8 @@ int prrte_rmaps_base_compute_local_ranks(prrte_job_t *jdata)
         }
     }
 
-    /* compute app_rank */
+    /* compute app_rank  and rank */
+    unsigned long rank = 0;
     for (i=0; i < jdata->apps->size; i++) {
         if (NULL == (app = (prrte_app_context_t*)prrte_pointer_array_get_item(jdata->apps, i))) {
             continue;
@@ -831,6 +832,7 @@ int prrte_rmaps_base_compute_local_ranks(prrte_job_t *jdata)
             if (proc->app_idx != app->idx) {
                 continue;
             }
+            proc->rank = rank++;
             proc->app_rank = k++;
         }
     }
