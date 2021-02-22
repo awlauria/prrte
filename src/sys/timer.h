@@ -80,10 +80,6 @@ BEGIN_C_DECLS
 #include "src/sys/arm64/timer.h"
 #elif PRTE_ASSEMBLY_ARCH == PRTE_IA32
 #include "src/sys/ia32/timer.h"
-#elif PRTE_ASSEMBLY_ARCH == PRTE_POWERPC32
-#include "src/sys/powerpc/timer.h"
-#elif PRTE_ASSEMBLY_ARCH == PRTE_POWERPC64
-#include "src/sys/powerpc/timer.h"
 #endif
 
 #ifndef DOXYGEN

@@ -175,10 +175,6 @@ enum {
 #include "src/sys/arm64/atomic.h"
 #elif PRTE_ASSEMBLY_ARCH == PRTE_IA32
 #include "src/sys/ia32/atomic.h"
-#elif PRTE_ASSEMBLY_ARCH == PRTE_POWERPC32
-#include "src/sys/powerpc/atomic.h"
-#elif PRTE_ASSEMBLY_ARCH == PRTE_POWERPC64
-#include "src/sys/powerpc/atomic.h"
 #endif
 
 #ifndef DOXYGEN

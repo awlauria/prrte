@@ -31,11 +31,10 @@ headers += \
 	sys/atomic_stdc.h \
 	sys/atomic_impl.h \
 	sys/timer.h \
-    sys/cma.h
+	sys/cma.h
 
 include sys/x86_64/Makefile.am
 include sys/arm/Makefile.am
 include sys/arm64/Makefile.am
 include sys/ia32/Makefile.am
-include sys/powerpc/Makefile.am
 include sys/gcc_builtin/Makefile.am
