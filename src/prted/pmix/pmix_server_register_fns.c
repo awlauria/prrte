@@ -142,8 +142,11 @@ int prte_pmix_server_register_nspace(prte_job_t *jdata)
     PRTE_CONSTRUCT(&local_procs, prte_list_t);
     for (i = 0; i < map->nodes->size; i++) {
         if (NULL != (node = (prte_node_t *) prte_pointer_array_get_item(map->nodes, i))) {
-            micro = NULL;
+            if(0 != strcmp(node->name, prte_process_info.nodename)) {
+               continue;
+            }
             tmp = NULL;
+            micro = NULL;
             vpid = PMIX_RANK_VALID;
             ui32 = 0;
             prte_argv_append_nosize(&list, node->name);
